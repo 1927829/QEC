@@ -54,6 +54,7 @@ class Measure_Circuit:
             #error, continue
         return flipped
     def generate_tanner_graph(self):
+        '''not spacetime'''
         graph = []
         for i in range(0,len(self.circuit)):
             gate=self.circuit[i][0]
@@ -67,5 +68,8 @@ class Measure_Circuit:
                 if gate == "noise":
                     graph.append(self.propagate_single_error(i,qubits[0],self.circuit[i][3][1]))
         return np.asarray(graph).T
-    
+    def generate_repeated_tanner_graph(self, perfect_boundary = True):
+        '''TODO
+        '''
+
 
