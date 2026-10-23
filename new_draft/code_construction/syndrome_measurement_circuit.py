@@ -1,5 +1,5 @@
 import numpy as np
-
+from scipy.sparse import csc_matrix, vstack
 class Measure_Circuit:
     def __init__(self,num_qubits: int):
         self.qubits = num_qubits
@@ -92,11 +92,10 @@ class Measure_Circuit:
                     if paulis[1]>0:
                         z[qubits[1]]=1
                     graph.append(self.propagate_error(i,x,z))
-        return graph
-        #return np.asarray(graph, dtype=np.uint8).reshape(len(graph), self.measurement_num).T #ROWS are measurements, COLUMNS are faults
-    def generate_repeated_tanner_graph(self, graph: list, round_nums: int):
+        return np.asarray(graph, dtype=np.uint8).reshape(len(graph), self.measurement_num).T #ROWS are measurements, COLUMNS are faults
+    def generate_repeated_tanner_graph(self, graph, round_nums: int):
         '''TODO
         '''
-        
+    
 
 
