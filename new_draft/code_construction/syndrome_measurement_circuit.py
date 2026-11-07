@@ -38,7 +38,7 @@ class Measure_Circuit:
         self.measurement_num+=1
         self.index+=1
     def propagate_error(self, error_location: int, x, z):
-        flipped = np.zeros(self.measurement_num)
+        flipped = np.zeros(self.measurement_num,dtype=np.uint8)
         for i in range(error_location+1, self.index):
             # do appropriate stuff
             gate = self.circuit[i][0]
