@@ -3,6 +3,7 @@ import numpy as np
 import stim
 from scipy.sparse import save_npz, load_npz
 from scipy.sparse import csc_matrix
+from bposd.css import css_code
 
 print("Importing checks ...")
 
@@ -23,8 +24,30 @@ checks_per_round = num_X+num_Z
 
 print("Initializing Circuit ...")
 
+code = css_code(hx=X_checks,hz=Z_checks)
+
+L_X = np.asarray(csc_matrix(code.lx).toarray(),dtype=np.uint8)
+L_Z = np.asarray(csc_matrix(code.lz).toarray(),dtype=np.uint8)
+
+#logical for logical matrix, L* residual = 0 if correct logical class
+
+#NOTE: L_x L_z do not necessarily satisfy pauli commutivity
+
+k = L_X.shape[0] #number of logical qubits
+assert k > 0
+assert L_Z.shape[0]==k
+
 circuit = stim.Circuit()
-circuit.append("R",list(range(n+num_X+num_Z)))
+circuit.append("R",list(range(n+n+num_X+num_Z)))
+#we add ANOTHER n simply because we want to track the final propagated pauli error
+#so we construct L_x, L_z
+
+for qubit in range(n):
+    circuit.append("H",[qubit])
+    circuit.append("CX",[qubit,n+num_X+num_Z+qubit])
+#we create bell pairs between data and residual
+reference_start = n+num_X+num_Z #distance between residual and data
+
 
 
 for r in range(round_nums+1):
@@ -68,11 +91,33 @@ for r in range(round_nums+1):
             previous = stim.target_rec(-2*checks_per_round+i)
             circuit.append("DETECTOR",[current,previous])
 
+for sector, logicals in enumerate((L_X,L_Z)):
+    for i in range(k):
+        targets = []
+
+        for qubit in np.flatnonzero(logicals[i]):
+            qubit = int(qubit)
+
+            for q in (qubit,reference_start+qubit):
+                if len(targets) > 0:
+                    targets.append(stim.target_combiner())
+
+                if sector==0:
+                    targets.append(stim.target_x(q))
+                else:
+                    targets.append(stim.target_z(q))
+
+        circuit.append("MPP",targets)
+        circuit.append("OBSERVABLE_INCLUDE",[stim.target_rec(-1)],sector*k+i)
+
+
 print("Done.")
+print("Creating Tanner graph and logical matrix ...")
 
-print("Creating tanner graph ...")
+dem = circuit.detector_error_model(
+    decompose_errors=False
+).flattened()
 
-dem = circuit.detector_error_model(decompose_errors=False).flattened()
 # error(p) detector x, detector y, detector z, ... flipped
 
 rows = [] #what detector was flipped from error x
@@ -80,34 +125,51 @@ cols = [] #which error is it
 error_probs = [] #probability for this fault to occur
 #ith index for rows and cols gives error(cols) and flipped (row) and prob flipped (errors_prob)
 
+logical_rows = [] #same thing
+logical_cols = []
+
 for instruction in dem:
     if not isinstance(instruction,stim.DemInstruction):
-        print("This should not happen: instruction")
         continue
+
     if instruction.type=="error":
         column = len(error_probs)
         error_probs.append(instruction.args_copy()[0])
 
         for target in instruction.targets_copy():
-            if isinstance(target,stim.DemTarget):
-                if target.is_relative_detector_id():
-                    rows.append(target.val)
-                    cols.append(column)
-            else:
-                print("This should not happen: target")
+            if not isinstance(target,stim.DemTarget):
+                continue
 
-#len rows -> how many flipped in total
+            if target.is_relative_detector_id():
+                rows.append(target.val)
+                cols.append(column)
 
-spacetime_graph = csc_matrix((np.ones(len(rows),dtype=np.uint8),(rows,cols)),
+            elif target.is_logical_observable_id():
+                logical_rows.append(target.val)
+                logical_cols.append(column)
+
+spacetime_graph = csc_matrix(
+    (
+        np.ones(len(rows),dtype=np.uint8),
+        (rows,cols)
+    ),
     shape=(dem.num_detectors,len(error_probs))
+)
+
+logical_matrix = csc_matrix(
+    (
+        np.ones(len(logical_rows),dtype=np.uint8),
+        (logical_rows,logical_cols)
+    ),
+    shape=(2*k,len(error_probs))
 )
 
 error_probs = np.asarray(error_probs)
 
-print("Done.")
+print("Tanner graph:",spacetime_graph.shape)
+print("Logical matrix:",logical_matrix.shape)
+
 print("Saving ...")
 
-save_npz('QEC/spacetime_graph.npz', spacetime_graph)
-np.save('QEC/error_prob.npy', error_probs)
-
-print("Done.")
+from pathlib import Path
+Path("QEC").mkdir(parents=True,exist_ok=True)
