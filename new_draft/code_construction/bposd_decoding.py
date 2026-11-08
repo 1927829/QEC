@@ -37,6 +37,7 @@ assert H.shape[1]==len(error_probs)
 
 
 def sample_shots(shots):
+    assert H.shape is not None
     errors = (rng.random((shots,H.shape[1])) < error_probs).astype(np.uint8)
 
     syndromes = np.asarray(H @ errors.T).T
@@ -46,9 +47,9 @@ def sample_shots(shots):
 failures = 0
 total = 0
 
-for batch in range(100):
+for batch in range(3):
     print(batch)
-    syndromes, actual_errors = sample_shots(1)
+    syndromes, actual_errors = sample_shots(10)
 
     for syndrome, actual_error in zip(syndromes,actual_errors):
         estimated_error = decoder.decode(syndrome).copy()
