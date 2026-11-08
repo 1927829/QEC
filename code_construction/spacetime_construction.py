@@ -7,7 +7,7 @@ from bposd.css import css_code
 
 print("Importing checks ...")
 
-import matrix_checks
+import code_construction.matrix_checks as matrix_checks
 
 X_checks = matrix_checks.X_checks
 Z_checks = matrix_checks.Z_checks

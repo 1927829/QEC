@@ -19,7 +19,7 @@ assert isinstance(spacetime_graph,csc_matrix)
 decoder = BpOsdDecoder(
     spacetime_graph,
     error_channel=list(error_probs),
-    max_iter=100,
+    max_iter=300,
     bp_method="minimum_sum",
     ms_scaling_factor=0.625,
     osd_method="OSD_0",
@@ -47,12 +47,13 @@ def sample_shots(shots):
 failures = 0
 total = 0
 
-for batch in range(3):
+for batch in range(5):
     print(batch)
-    syndromes, actual_errors = sample_shots(10)
+    syndromes, actual_errors = sample_shots(1)
 
     for syndrome, actual_error in zip(syndromes,actual_errors):
         estimated_error = decoder.decode(syndrome).copy()
+
         residual = actual_error ^ estimated_error
 
         syndrome_bad = np.any(np.asarray(spacetime_graph @ residual).ravel() % 2)
@@ -61,5 +62,6 @@ for batch in range(3):
 
         failures += int(syndrome_bad or logical_bad)
         total += 1
+        
 
 print("Failure rate:",failures/total)
