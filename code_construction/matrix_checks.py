@@ -2,7 +2,6 @@ import numpy as np
 import stim
 from scipy.sparse import csc_matrix
 from bposd.css import css_code
-from code_construction.syndrome_measurement_circuit import *
 #[[144,12,12]]
 n=144 #144 data qubits
 k=12 #12 logical qubits

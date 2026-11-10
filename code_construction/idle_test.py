@@ -7,15 +7,15 @@ from bposd.css import css_code
 
 print("Importing checks ...")
 
-import code_construction.matrix_checks as matrix_checks
+import matrix_checks as matrix_checks
 
 X_checks = matrix_checks.X_checks
 Z_checks = matrix_checks.Z_checks
 
 print("Done.")
 
-p = 0.001
-round_nums = 10
+p = 0.0068 
+round_nums = 12
 
 n = X_checks.shape[1]
 num_X = X_checks.shape[0]
@@ -53,14 +53,14 @@ reference_start = n+num_X+num_Z #distance between residual and data
 for r in range(round_nums+1):
     # first round, last round is noiseless
     # first round is intialization
-    noisy = 0 < r < round_nums
+    noisy = 0 < r < round_nums-1
     error_rate = p if noisy else 0
 
     for i in range(num_X):
         ancilla = n+i
         circuit.append("H",[ancilla])
         if noisy:
-            circuit.append("DEPOLARIZE1",[ancilla],p)
+            circuit.append("DEPOLARIZE1",[ancilla],p/10)
         for qubit in np.flatnonzero(X_checks[i]):
             qubit = int(qubit)
             circuit.append("CX",[ancilla,qubit])
@@ -69,7 +69,7 @@ for r in range(round_nums+1):
 
         circuit.append("H",[ancilla])
         if noisy:
-            circuit.append("DEPOLARIZE1",[ancilla],p)
+            circuit.append("DEPOLARIZE1",[ancilla],p/10)
 
         circuit.append("MR",[ancilla],error_rate)
 
