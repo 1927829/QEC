@@ -1,5 +1,10 @@
 """
 No idea what the code is doing here, I'll just treat it as a black box
+This is different from normal relay-BP used on tour de gross because
+tour de gross uses 5 converged, but the computing power I can access
+is not strong enough to use that (12 hour limit per run).
+Therefore this uses 1 converged (customizable here)
+
 """
 from dataclasses import dataclass
 

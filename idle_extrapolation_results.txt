@@ -37,4 +37,14 @@ Failure rate: 0.0 at weight 42
 Failure rate: 0.00013513513513513514 at weight 43
 Failure rate: 0.0 at weight 44
 2500 trials each
-#has not completed running, will update upon completion
+Failure rate: 0.0 at weight 45
+Failure rate: 0.0 at weight 50
+Failure rate: 0.0012 at weight 55
+Failure rate: 0.0024 at weight 60
+Failure rate: 0.0044 at weight 65
+Failure rate: 0.0056 at weight 70
+Failure rate: 0.0136 at weight 75
+Failure rate: 0.0292 at weight 80
+Failure rate: 0.0556 at weight 85
+Failure rate: 0.0932 at weight 90
+Failure rate: 0.1664 at weight 95
