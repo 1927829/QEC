@@ -22,7 +22,7 @@ for i in range(0,order_y):
     matrix=np.identity(order_y)
     y_cyclic_shift.append(np.roll(matrix,i,axis=1))
 
-#A=x^3+y+y^2, y^3+x^2+x, x and y represent the cyclic shift matrices
+#A=x^3+y+y^2, B=y^3+x^2+x, x and y represent the cyclic shift matrices
 #x^ay^b = x_cyclic_shift[a] TENSOR y_cyclic_shift[b]
 A_poly = np.zeros((order_x*order_y, order_x*order_y))
 B_poly = np.zeros((order_x*order_y, order_x*order_y))
@@ -40,3 +40,15 @@ Z_checks = np.hstack((np.transpose(B_poly),np.transpose(A_poly)))
 
 X_checks = np.asarray(X_checks,dtype=np.uint8)
 Z_checks = np.asarray(Z_checks,dtype=np.uint8)
+
+
+def get_qubit_a(start: int, poly: tuple, transpose=False):
+    a, b = poly
+    x, y = divmod(start, order_y)
+    if transpose:
+        a, b = -a, -b
+    x = (x + a) % order_x
+    y = (y + b) % order_y
+    return x * order_y + y
+def get_qubit_b(start: int, poly: tuple, transpose=False):
+    return (n//2) + get_qubit_a(start, poly, transpose)
