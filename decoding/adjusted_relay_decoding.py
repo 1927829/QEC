@@ -14,7 +14,14 @@ error_probs = np.asarray(
 )
 logical_matrix = load_npz("logical_matrix.npz").tocsr()
 
-decoder = AdaptedRelayDecoder(H,error_probabilities=error_probs,max_legs=61,seed=271828,)
+decoder = AdaptedRelayDecoder(
+    H,
+    error_probabilities=error_probs,
+    max_legs=61,
+    stop_nconv=1,         
+    carry_messages=False,  
+    seed=271828,
+)
 decoder.warm_up()
 
 rng = np.random.default_rng()
