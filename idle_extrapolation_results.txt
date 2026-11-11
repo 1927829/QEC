@@ -1,0 +1,40 @@
+Trials: 16000-200*weight
+Failure rate: 0.0 at weight 8
+Failure rate: 0.0 at weight 9
+Failure rate: 0.0 at weight 10
+Failure rate: 0.0 at weight 11
+Failure rate: 0.0 at weight 12
+Failure rate: 0.0 at weight 13
+Failure rate: 0.0 at weight 14
+Failure rate: 0.0 at weight 15
+Failure rate: 0.0 at weight 16
+Failure rate: 0.0 at weight 17
+Failure rate: 0.0 at weight 18
+Failure rate: 0.0 at weight 19
+Failure rate: 0.0 at weight 20
+Failure rate: 0.0 at weight 21
+Failure rate: 0.0 at weight 22
+Failure rate: 0.0 at weight 23
+Failure rate: 0.0 at weight 24
+Failure rate: 0.0 at weight 25
+Failure rate: 0.0 at weight 26
+Failure rate: 0.0 at weight 27
+Failure rate: 9.615384615384615e-05 at weight 28
+Failure rate: 0.0 at weight 29
+Failure rate: 0.0 at weight 30
+Failure rate: 0.0 at weight 31
+Failure rate: 0.0 at weight 32
+Failure rate: 0.0 at weight 33
+Failure rate: 0.0 at weight 34
+Failure rate: 0.00011111111111111112 at weight 35
+Failure rate: 0.0 at weight 36
+Failure rate: 0.0 at weight 37
+Failure rate: 0.0 at weight 38
+Failure rate: 0.0 at weight 39
+Failure rate: 0.0 at weight 40
+Failure rate: 0.0 at weight 41
+Failure rate: 0.0 at weight 42
+Failure rate: 0.00013513513513513514 at weight 43
+Failure rate: 0.0 at weight 44
+2500 trials each
+#has not completed running, will update upon completion
