@@ -16,7 +16,7 @@ X_checks = matrix_checks.X_checks
 Z_checks = matrix_checks.Z_checks
 
 print("Done.")
-p = 0.005
+p = 0.001
 ratio_single = 1    
 ratio_idle = 1 #theoretically split this into two cases
 noisy_rounds = 10
