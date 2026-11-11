@@ -2,7 +2,7 @@ import numpy as np
 import time
 from scipy.sparse import load_npz
 from pathlib import Path
-from relay_black_box import AdaptedRelayDecoder
+from decoders.relay_black_box import AdaptedRelayDecoder
 if not Path("spacetime_graph.npz").exists():
     raise FileNotFoundError(
         "Run spacetime_construction first to generate the matrices."
@@ -41,9 +41,9 @@ nonconverged = 0
 total = 0
 time_spent_converging = 0
 time_1=time.time()
-for batch in range(20):
+for batch in range(50):
     print("Batch:", batch + 1)
-    syndromes, actual_errors = sample_shots(10)
+    syndromes, actual_errors = sample_shots(20)
 
     for syndrome, actual_error in zip(syndromes, actual_errors):
         result = decoder.decode(

@@ -1,13 +1,16 @@
 
 import numpy as np
+import sys
+from pathlib import Path
+
 import stim
 from scipy.sparse import save_npz, load_npz
 from scipy.sparse import csc_matrix
 from bposd.css import css_code
 
 print("Importing checks ...")
-
-import matrix_checks as matrix_checks
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+import code_construction.matrix_checks as matrix_checks
 
 X_checks = matrix_checks.X_checks
 Z_checks = matrix_checks.Z_checks
