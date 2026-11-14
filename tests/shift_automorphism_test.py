@@ -223,7 +223,7 @@ for i in range(n//2):
 circuit.append('TICK',[])
 
 for i in range(n):
-    circuit.append("MR",i,error_rate)
+    circuit.append("MR",i,error_rate) #differs from IBM
     current = stim.target_rec(-1)
     circuit.append("DETECTOR",[current])
 if noisy:
@@ -267,13 +267,16 @@ circuit.append('TICK',[])
 
 for i in range(n):
     ancilla = i+n
-    circuit.append("MR",ancilla,error_rate)
+    circuit.append("MR",ancilla,error_rate) #differs from IBM
     current = stim.target_rec(-1)
     circuit.append("DETECTOR",[current])
 if noisy:
     circuit.append("DEPOLARIZE1",list(range(0,n)),p/ratio_idle)
 
 #so far we have 288 measurements through the shift automorphisms, and 288 detectors
+
+
+#IBM repeats above 10 times, we only once. Will change
 
 #one round of noisy syndrome
 
