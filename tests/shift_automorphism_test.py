@@ -1,5 +1,5 @@
 #used in sparse long range
-
+#very similar to IBM's implementation, but they have no written code so idk
 import numpy as np
 import sys
 from pathlib import Path
@@ -168,6 +168,8 @@ circuit.append('TICK',[])
 for i in range(num_X): #num_X == num_Z
     ancilla = n+i
     circuit.append("MX",[ancilla],error_rate)
+    cur = stim.target_rec(-1)
+    circuit.append("CZ",[cur,ancilla]) #local frame tracked
 for i in range(num_Z):
     ancilla = n+num_X+i
     circuit.append("RZ",[ancilla])
@@ -176,234 +178,243 @@ for i in range(num_Z):
 if noisy:
     circuit.append("DEPOLARIZE1",list(range(0, n)),p/ratio_idle)
 
-for i in range(num_X): #num_X == num_Z
-    ancilla = n+i
-    circuit.append("RZ",[ancilla])
-    if noisy:
-        circuit.append("X_ERROR",[ancilla],p/ratio_single)
+def one_round():
+    #begin
+    noisy = True
+    error_rate = p if noisy else 0
+    #layer = 0
+    circuit.append('TICK',[])
 
+    for i in range(n//2):
+        qubit = (matrix_checks.get_qubit_a(i,(e,f)))% (n//2)
+        ancilla = i+n
+        circuit.append("CX",[ancilla,qubit])
+        if noisy:
+            circuit.append("DEPOLARIZE2",[qubit,ancilla],p)
+    for i in range(n//2):
+        qubit = (matrix_checks.get_qubit_a(i,(-2*e,-2*f)))%(n//2)
+        qubit+= n//2
+        ancilla = n+num_X+i
+        circuit.append("CX",[qubit,ancilla])
+        if noisy:
+            circuit.append("DEPOLARIZE2",[qubit,ancilla],p)
+    #layer = 1
+    circuit.append('TICK',[])
 
-#begin
-noisy = True
-error_rate = p if noisy else 0
-#layer = 0
-circuit.append('TICK',[])
+    for i in range(n//2):
+        qubit = (matrix_checks.get_qubit_a(i,(e,f)))% (n//2)
+        ancilla = i+n
+        circuit.append("CX",[qubit,ancilla])
+        if noisy:
+            circuit.append("DEPOLARIZE2",[qubit,ancilla],p)
+    for i in range(n//2):
+        qubit = (matrix_checks.get_qubit_a(i,(-2*e,-2*f)))%(n//2)
+        qubit+= n//2
+        ancilla = n+num_X+i
+        circuit.append("CX",[ancilla,qubit])
+        if noisy:
+            circuit.append("DEPOLARIZE2",[qubit,ancilla],p)
 
-for i in range(n//2):
-    qubit = (matrix_checks.get_qubit_a(i,(e,f)))% (n//2)
-    ancilla = i+n
-    circuit.append("CX",[qubit,ancilla])
-    if noisy:
-        circuit.append("DEPOLARIZE2",[qubit,ancilla],p)
-for i in range(n//2):
-    qubit = (matrix_checks.get_qubit_a(i,(-2*e,-2*f)))%(n//2)
-    qubit+= n//2
-    ancilla = n+num_X+i
-    circuit.append("CX",[qubit,ancilla])
-    if noisy:
-        circuit.append("DEPOLARIZE2",[qubit,ancilla],p)
-#layer = 1
-circuit.append('TICK',[])
+    #layer = 2
+    circuit.append('TICK',[])
 
-for i in range(n//2):
-    qubit = (matrix_checks.get_qubit_a(i,(e,f)))% (n//2)
-    ancilla = i+n
-    circuit.append("CX",[ancilla,qubit])
+    for i in range(n//2):
+        circuit.append("MX",i,error_rate) #differs from IBM
+        current = stim.target_rec(-1)
+        circuit.append("CZ",[current, i]) #tracked in frame, no error
+        circuit.append("DETECTOR",[current])
+    for i in range(n//2,n):
+            circuit.append("MZ",i,error_rate) #differs from IBM
+            current = stim.target_rec(-1)
+            circuit.append("CX",[current, i]) #tracked in frame, no error
+            circuit.append("DETECTOR",[current])
     if noisy:
-        circuit.append("DEPOLARIZE2",[qubit,ancilla],p)
-for i in range(n//2):
-    qubit = (matrix_checks.get_qubit_a(i,(-2*e,-2*f)))%(n//2)
-    qubit+= n//2
-    ancilla = n+num_X+i
-    circuit.append("CX",[ancilla,qubit])
-    if noisy:
-        circuit.append("DEPOLARIZE2",[qubit,ancilla],p)
+        circuit.append("DEPOLARIZE1",list(range(n,n+num_X+num_Z)),p/ratio_idle)
 
-#layer = 2
-circuit.append('TICK',[])
+    #layer = 3
+    circuit.append('TICK',[])
 
-for i in range(n):
-    circuit.append("MR",i,error_rate) #differs from IBM
-    current = stim.target_rec(-1)
-    circuit.append("DETECTOR",[current])
-if noisy:
-    circuit.append("DEPOLARIZE1",list(range(n,n+num_X+num_Z)),p/ratio_idle)
+    for i in range(n//2):
+        qubit = (matrix_checks.get_qubit_a(i,(2*e,2*f)))% (n//2)
+        ancilla = i+n
+        circuit.append("CX",[qubit,ancilla])
+        if noisy:
+            circuit.append("DEPOLARIZE2",[qubit,ancilla],p)
+    for i in range(n//2):
+        qubit = (matrix_checks.get_qubit_a(i,(-e,-f)))%(n//2)
+        qubit+= n//2
+        ancilla = n+num_X+i
+        circuit.append("CX",[ancilla,qubit])
+        if noisy:
+            circuit.append("DEPOLARIZE2",[qubit,ancilla],p)
+    #layer = 4
+    circuit.append('TICK',[])
 
-#layer = 3
-circuit.append('TICK',[])
+    for i in range(n//2):
+        qubit = (matrix_checks.get_qubit_a(i,(2*e,2*f)))% (n//2)
+        ancilla = i+n
+        circuit.append("CX",[ancilla,qubit])
+        if noisy:
+            circuit.append("DEPOLARIZE2",[qubit,ancilla],p)
+    for i in range(n//2):
+        qubit = (matrix_checks.get_qubit_a(i,(-e,-f)))%(n//2)
+        qubit+= n//2
+        ancilla = n+num_X+i
+        circuit.append("CX",[qubit,ancilla])
+        if noisy:
+            circuit.append("DEPOLARIZE2",[qubit,ancilla],p)
 
-for i in range(n//2):
-    qubit = (matrix_checks.get_qubit_a(i,(2*e,2*f)))% (n//2)
-    ancilla = i+n
-    circuit.append("CX",[ancilla,qubit])
-    if noisy:
-        circuit.append("DEPOLARIZE2",[qubit,ancilla],p)
-for i in range(n//2):
-    qubit = (matrix_checks.get_qubit_a(i,(-e,-f)))%(n//2)
-    qubit+= n//2
-    ancilla = n+num_X+i
-    circuit.append("CX",[ancilla,qubit])
-    if noisy:
-        circuit.append("DEPOLARIZE2",[qubit,ancilla],p)
-#layer = 4
-circuit.append('TICK',[])
+    #layer = 5
+    circuit.append('TICK',[])
 
-for i in range(n//2):
-    qubit = (matrix_checks.get_qubit_a(i,(2*e,2*f)))% (n//2)
-    ancilla = i+n
-    circuit.append("CX",[qubit,ancilla])
+    for i in range(0,n//2):
+        ancilla = i+n
+        circuit.append("MX",ancilla,error_rate) #differs from IBM
+        current = stim.target_rec(-1)
+        circuit.append("CZ",[current, ancilla]) #tracked in frame, no error
+        circuit.append("DETECTOR",[current])
+    for i in range(n//2,n):
+            ancilla = i+n
+            circuit.append("MZ",ancilla,error_rate) #differs from IBM
+            current = stim.target_rec(-1)
+            circuit.append("CX",[current, ancilla]) #tracked in frame, no error
+            circuit.append("DETECTOR",[current])
     if noisy:
-        circuit.append("DEPOLARIZE2",[qubit,ancilla],p)
-for i in range(n//2):
-    qubit = (matrix_checks.get_qubit_a(i,(-e,-f)))%(n//2)
-    qubit+= n//2
-    ancilla = n+num_X+i
-    circuit.append("CX",[qubit,ancilla])
-    if noisy:
-        circuit.append("DEPOLARIZE2",[qubit,ancilla],p)
+        circuit.append("DEPOLARIZE1",list(range(0,n)),p/ratio_idle)
 
-#layer = 5
-circuit.append('TICK',[])
+    #so far we have 288 measurements through the shift automorphisms, and 288 detectors
 
-for i in range(n):
-    ancilla = i+n
-    circuit.append("MR",ancilla,error_rate) #differs from IBM
-    current = stim.target_rec(-1)
-    circuit.append("DETECTOR",[current])
-if noisy:
-    circuit.append("DEPOLARIZE1",list(range(0,n)),p/ratio_idle)
+    #one round of noisy syndrome
 
-#so far we have 288 measurements through the shift automorphisms, and 288 detectors
+    noisy = True
+    error_rate = p if noisy else 0
+    #layer = 0
+    circuit.append('TICK',[])
+    for i in range(num_X): #num_X == num_Z
+        ancilla = n+i
+        circuit.append("RX",[n+i])
+        if noisy:
+            circuit.append("Z_ERROR",[ancilla],p/ratio_single)
+    for i in range(num_Z):
+        ancilla = n+num_X+i
+        qubit = matrix_checks.get_qubit_b(i,matrix_checks.A_polynomial[0],True)
+        circuit.append("CX",[qubit,ancilla])
+        if noisy:
+            circuit.append("DEPOLARIZE2",[qubit,ancilla],p)
+    #idle on all left data
+    if noisy:
+        circuit.append("DEPOLARIZE1",list(range(n // 2)),p/ratio_idle)
+    #layer = 1
+    circuit.append('TICK',[])
+    for i in range(num_X): #num_X == num_Z
+        ancilla = n+i
+        qubit = matrix_checks.get_qubit_a(i,matrix_checks.A_polynomial[1],False)
+        circuit.append("CX",[ancilla,qubit])
+        if noisy:
+            circuit.append("DEPOLARIZE2",[ancilla,qubit],p)
+    for i in range(num_Z):
+        ancilla = n+num_X+i
+        qubit = matrix_checks.get_qubit_b(i,matrix_checks.A_polynomial[2],True)
+        circuit.append("CX",[qubit,ancilla])
+        if noisy:
+            circuit.append("DEPOLARIZE2",[qubit,ancilla],p)
+    #layer = 2
+    circuit.append('TICK',[])
+    for i in range(num_X): #num_X == num_Z
+        ancilla = n+i
+        qubit = matrix_checks.get_qubit_b(i,matrix_checks.B_polynomial[1],False)
+        circuit.append("CX",[ancilla,qubit])
+        if noisy:
+            circuit.append("DEPOLARIZE2",[ancilla,qubit],p)
+    for i in range(num_Z):
+        ancilla = n+num_X+i
+        qubit = matrix_checks.get_qubit_a(i,matrix_checks.B_polynomial[0],True)
+        circuit.append("CX",[qubit,ancilla])
+        if noisy:
+            circuit.append("DEPOLARIZE2",[qubit,ancilla],p)
+    #layer = 3
+    circuit.append('TICK',[])
+    for i in range(num_X): #num_X == num_Z
+        ancilla = n+i
+        qubit = matrix_checks.get_qubit_b(i,matrix_checks.B_polynomial[0],False)
+        circuit.append("CX",[ancilla,qubit])
+        if noisy:
+            circuit.append("DEPOLARIZE2",[ancilla,qubit],p)
+    for i in range(num_Z):
+        ancilla = n+num_X+i
+        qubit = matrix_checks.get_qubit_a(i,matrix_checks.B_polynomial[1],True)
+        circuit.append("CX",[qubit,ancilla])
+        if noisy:
+            circuit.append("DEPOLARIZE2",[qubit,ancilla],p)
+    #layer = 4
+    circuit.append('TICK',[])
+    for i in range(num_X): #num_X == num_Z
+        ancilla = n+i
+        qubit = matrix_checks.get_qubit_b(i,matrix_checks.B_polynomial[2],False)
+        circuit.append("CX",[ancilla,qubit])
+        if noisy:
+            circuit.append("DEPOLARIZE2",[ancilla,qubit],p)
+    for i in range(num_Z):
+        ancilla = n+num_X+i
+        qubit = matrix_checks.get_qubit_a(i,matrix_checks.B_polynomial[2],True)
+        circuit.append("CX",[qubit,ancilla])
+        if noisy:
+            circuit.append("DEPOLARIZE2",[qubit,ancilla],p)
+    #layer = 5
+    circuit.append('TICK',[])
+    for i in range(num_X): #num_X == num_Z
+        ancilla = n+i
+        qubit = matrix_checks.get_qubit_a(i,matrix_checks.A_polynomial[0],False)
+        circuit.append("CX",[ancilla,qubit])
+        if noisy:
+            circuit.append("DEPOLARIZE2",[ancilla,qubit],p)
+    for i in range(num_Z):
+        ancilla = n+num_X+i
+        qubit = matrix_checks.get_qubit_b(i,matrix_checks.A_polynomial[1],True)
+        circuit.append("CX",[qubit,ancilla])
+        if noisy:
+            circuit.append("DEPOLARIZE2",[qubit,ancilla],p)
+    #layer = 6
+    circuit.append('TICK',[])
+    for i in range(num_X): #num_X == num_Z
+        ancilla = n+i
+        qubit = matrix_checks.get_qubit_a(i,matrix_checks.A_polynomial[2],False)
+        circuit.append("CX",[ancilla,qubit])
+        if noisy:
+            circuit.append("DEPOLARIZE2",[ancilla,qubit],p)
+    for i in range(num_Z):
+        ancilla = n+num_X+i
+        circuit.append("MZ",[ancilla],error_rate)
+    if noisy:
+        circuit.append("DEPOLARIZE1",list(range(n//2, n)),p/ratio_idle)
+    #layer = 7
+    circuit.append('TICK',[])
+    for i in range(num_X): #num_X == num_Z
+        ancilla = n+i
+        circuit.append("MX",[ancilla],error_rate)
+        cur = stim.target_rec(-1)
+        circuit.append("CZ",[cur,ancilla]) #local frame tracked
+    for i in range(num_Z):
+        ancilla = n+num_X+i
+        circuit.append("RZ",[ancilla])
+        if noisy:
+            circuit.append("X_ERROR",[ancilla],p/ratio_single)
+    if noisy:
+        circuit.append("DEPOLARIZE1",list(range(0, n)),p/ratio_idle)
+    for i in range(checks_per_round):
+        current = stim.target_rec(-checks_per_round+i)
+        sector = (i>= n//2)
+        v = i%(n//2)
+        shift = matrix_checks.get_qubit_a(v,(-e,-f))
+        index = shift + (num_X * sector)
+        previous = stim.target_rec(-4*checks_per_round+index)
+        circuit.append("DETECTOR",[current,previous])
 
+for i in range(noisy_rounds):
+    one_round()
 
-#IBM repeats above 10 times, we only once. Will change
-
-#one round of noisy syndrome
-
-noisy = True
-error_rate = p if noisy else 0
-#layer = 0
-circuit.append('TICK',[])
-for i in range(num_X): #num_X == num_Z
-    ancilla = n+i
-    circuit.append("RX",[n+i])
-    if noisy:
-        circuit.append("Z_ERROR",[ancilla],p/ratio_single)
-for i in range(num_Z):
-    ancilla = n+num_X+i
-    qubit = matrix_checks.get_qubit_b(i,matrix_checks.A_polynomial[0],True)
-    circuit.append("CX",[qubit,ancilla])
-    if noisy:
-        circuit.append("DEPOLARIZE2",[qubit,ancilla],p)
-#idle on all left data
-if noisy:
-    circuit.append("DEPOLARIZE1",list(range(n // 2)),p/ratio_idle)
-#layer = 1
-circuit.append('TICK',[])
-for i in range(num_X): #num_X == num_Z
-    ancilla = n+i
-    qubit = matrix_checks.get_qubit_a(i,matrix_checks.A_polynomial[1],False)
-    circuit.append("CX",[ancilla,qubit])
-    if noisy:
-        circuit.append("DEPOLARIZE2",[ancilla,qubit],p)
-for i in range(num_Z):
-    ancilla = n+num_X+i
-    qubit = matrix_checks.get_qubit_b(i,matrix_checks.A_polynomial[2],True)
-    circuit.append("CX",[qubit,ancilla])
-    if noisy:
-        circuit.append("DEPOLARIZE2",[qubit,ancilla],p)
-#layer = 2
-circuit.append('TICK',[])
-for i in range(num_X): #num_X == num_Z
-    ancilla = n+i
-    qubit = matrix_checks.get_qubit_b(i,matrix_checks.B_polynomial[1],False)
-    circuit.append("CX",[ancilla,qubit])
-    if noisy:
-        circuit.append("DEPOLARIZE2",[ancilla,qubit],p)
-for i in range(num_Z):
-    ancilla = n+num_X+i
-    qubit = matrix_checks.get_qubit_a(i,matrix_checks.B_polynomial[0],True)
-    circuit.append("CX",[qubit,ancilla])
-    if noisy:
-        circuit.append("DEPOLARIZE2",[qubit,ancilla],p)
-#layer = 3
-circuit.append('TICK',[])
-for i in range(num_X): #num_X == num_Z
-    ancilla = n+i
-    qubit = matrix_checks.get_qubit_b(i,matrix_checks.B_polynomial[0],False)
-    circuit.append("CX",[ancilla,qubit])
-    if noisy:
-        circuit.append("DEPOLARIZE2",[ancilla,qubit],p)
-for i in range(num_Z):
-    ancilla = n+num_X+i
-    qubit = matrix_checks.get_qubit_a(i,matrix_checks.B_polynomial[1],True)
-    circuit.append("CX",[qubit,ancilla])
-    if noisy:
-        circuit.append("DEPOLARIZE2",[qubit,ancilla],p)
-#layer = 4
-circuit.append('TICK',[])
-for i in range(num_X): #num_X == num_Z
-    ancilla = n+i
-    qubit = matrix_checks.get_qubit_b(i,matrix_checks.B_polynomial[2],False)
-    circuit.append("CX",[ancilla,qubit])
-    if noisy:
-        circuit.append("DEPOLARIZE2",[ancilla,qubit],p)
-for i in range(num_Z):
-    ancilla = n+num_X+i
-    qubit = matrix_checks.get_qubit_a(i,matrix_checks.B_polynomial[2],True)
-    circuit.append("CX",[qubit,ancilla])
-    if noisy:
-        circuit.append("DEPOLARIZE2",[qubit,ancilla],p)
-#layer = 5
-circuit.append('TICK',[])
-for i in range(num_X): #num_X == num_Z
-    ancilla = n+i
-    qubit = matrix_checks.get_qubit_a(i,matrix_checks.A_polynomial[0],False)
-    circuit.append("CX",[ancilla,qubit])
-    if noisy:
-        circuit.append("DEPOLARIZE2",[ancilla,qubit],p)
-for i in range(num_Z):
-    ancilla = n+num_X+i
-    qubit = matrix_checks.get_qubit_b(i,matrix_checks.A_polynomial[1],True)
-    circuit.append("CX",[qubit,ancilla])
-    if noisy:
-        circuit.append("DEPOLARIZE2",[qubit,ancilla],p)
-#layer = 6
-circuit.append('TICK',[])
-for i in range(num_X): #num_X == num_Z
-    ancilla = n+i
-    qubit = matrix_checks.get_qubit_a(i,matrix_checks.A_polynomial[2],False)
-    circuit.append("CX",[ancilla,qubit])
-    if noisy:
-        circuit.append("DEPOLARIZE2",[ancilla,qubit],p)
-for i in range(num_Z):
-    ancilla = n+num_X+i
-    circuit.append("MZ",[ancilla],error_rate)
-if noisy:
-    circuit.append("DEPOLARIZE1",list(range(n//2, n)),p/ratio_idle)
-#layer = 7
-circuit.append('TICK',[])
-for i in range(num_X): #num_X == num_Z
-    ancilla = n+i
-    circuit.append("MX",[ancilla],error_rate)
-for i in range(num_Z):
-    ancilla = n+num_X+i
-    circuit.append("RZ",[ancilla])
-    if noisy:
-        circuit.append("X_ERROR",[ancilla],p/ratio_single)
-if noisy:
-    circuit.append("DEPOLARIZE1",list(range(0, n)),p/ratio_idle)
-for i in range(checks_per_round):
-    current = stim.target_rec(-checks_per_round+i)
-    sector = (i>= n//2)
-    v = i%(n//2)
-    shift = matrix_checks.get_qubit_a(v,(-e,-f))
-    index = shift + (num_X * sector)
-    previous = stim.target_rec(-4*checks_per_round+index)
-    circuit.append("DETECTOR",[current,previous])
 
 #final perfect syndrome cycle
-
 noisy = False
 error_rate = p if noisy else 0
 #layer = 0
@@ -532,7 +543,7 @@ for sector, logicals in enumerate((L_X,L_Z)): #literally loop through 2 elements
             qubit = int(qubit)
             half = qubit // (n//2)
             cell = qubit % (n//2)
-            shifted_qubit = half * (n // 2) + matrix_checks.get_qubit_a(cell, (e, f))
+            shifted_qubit = half * (n // 2) + matrix_checks.get_qubit_a(cell, (e*noisy_rounds, f*noisy_rounds))
             for q in (shifted_qubit,reference_start+qubit):
                 if len(targets) > 0:
                     targets.append(stim.target_combiner())
