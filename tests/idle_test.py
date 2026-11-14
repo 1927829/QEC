@@ -1,3 +1,4 @@
+#used in sparse long range or all to all
 
 import numpy as np
 import sys
