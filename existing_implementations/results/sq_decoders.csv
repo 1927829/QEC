@@ -1,0 +1,6 @@
+circuit,p,decoder,shots,failures,seconds,same_prediction,fail_ibm,fail_sq
+gross memory 12 rounds,0.005,BP-OSD,300,49.0,19.5,,,
+gross memory 12 rounds,0.005,BP-LSD,300,91.0,27.1,,,
+gross memory 12 rounds,0.005,Relay-BP,300,31.0,139.6,,,
+gross memory 12 rounds,0.005,Ambiguity Clustering,300,26.0,4.6,,,
+relay equivalence,0.005,IBM vs stabilizer-qec,100,,,93.0,10.0,11.0

@@ -1,0 +1,5 @@
+experiment,p,decoder,shots,failures,seconds
+surface d=5 SI1000,0.005,PyMatching (local),2000,193,0.0
+gross IBM circuit uniform,0.004,"BP-OSD, stabilizer-qec (local)",500,17,15.4
+gross Deltakit circuit uniform,0.004,"BP-OSD, stabilizer-qec (local)",500,43,20.3
+gross stabilizer-qec circuit uniform,0.004,"BP-OSD, stabilizer-qec (local)",500,21,16.3

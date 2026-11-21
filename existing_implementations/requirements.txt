@@ -1,0 +1,18 @@
+# Versions the results in this folder were produced with (Python 3.12).
+# Each notebook also installs what it needs in its first code cell.
+stim==1.16.0
+sinter==1.15.0          # 1.16.0 has no wheel on some systems; 1.15.0 works with stim 1.16
+pymatching==2.4.0
+ldpc==2.4.1             # BP-OSD, BP-LSD (Roffe et al.)
+beliefmatching==0.2.0   # Stim error model -> check matrix for ldpc
+stabilizer-qec==2.1.0   # gross code circuits; BP-OSD, BP-LSD, Relay-BP, Ambiguity Clustering, Union-Find
+deltakit==0.10.2        # notebook 03 (local use needs no account)
+numpy>=2.0,<2.3
+scipy>=1.13
+pandas>=2.2
+matplotlib>=3.8
+nbformat>=5.9
+pytest>=8
+
+# Optional, not installed by default:
+#   relay-bp[stim]   IBM's Relay-BP. No Windows wheel; building it needs Rust (https://rustup.rs).

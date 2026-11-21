@@ -1,0 +1,49 @@
+{'d': 5, 'p': 0.004, 'variant': 'MWPM', 'shots': 20000, 'failures': 161, 'seconds': 0.0}
+{'d': 5, 'p': 0.004, 'variant': 'MWPM exact', 'shots': 20000, 'failures': 162, 'seconds': 0.0}
+{'d': 5, 'p': 0.004, 'variant': 'BP-OSD-0', 'shots': 20000, 'failures': 169, 'seconds': 2.8}
+{'d': 5, 'p': 0.004, 'variant': 'BP-OSD-CS10', 'shots': 20000, 'failures': 165, 'seconds': 4.9}
+{'d': 5, 'p': 0.004, 'variant': 'AC kappa=0', 'shots': 20000, 'failures': 155, 'seconds': 1.1}
+{'d': 5, 'p': 0.004, 'variant': 'AC kappa=0.05', 'shots': 20000, 'failures': 161, 'seconds': 1.2}
+{'d': 5, 'p': 0.004, 'variant': 'AC kappa=0.2', 'shots': 20000, 'failures': 161, 'seconds': 1.6}
+d5_p0.004 gap computed on 429 shots
+{'d': 5, 'p': 0.006, 'variant': 'MWPM', 'shots': 20000, 'failures': 514, 'seconds': 0.0}
+{'d': 5, 'p': 0.006, 'variant': 'MWPM exact', 'shots': 20000, 'failures': 505, 'seconds': 0.0}
+{'d': 5, 'p': 0.006, 'variant': 'BP-OSD-0', 'shots': 20000, 'failures': 561, 'seconds': 4.1}
+{'d': 5, 'p': 0.006, 'variant': 'BP-OSD-CS10', 'shots': 20000, 'failures': 504, 'seconds': 7.3}
+{'d': 5, 'p': 0.006, 'variant': 'AC kappa=0', 'shots': 20000, 'failures': 521, 'seconds': 2.1}
+{'d': 5, 'p': 0.006, 'variant': 'AC kappa=0.05', 'shots': 20000, 'failures': 482, 'seconds': 1.8}
+{'d': 5, 'p': 0.006, 'variant': 'AC kappa=0.2', 'shots': 20000, 'failures': 486, 'seconds': 2.1}
+d5_p0.006 gap computed on 490 shots
+{'d': 7, 'p': 0.004, 'variant': 'MWPM', 'shots': 20000, 'failures': 86, 'seconds': 0.1}
+{'d': 7, 'p': 0.004, 'variant': 'MWPM exact', 'shots': 20000, 'failures': 86, 'seconds': 0.1}
+{'d': 7, 'p': 0.004, 'variant': 'BP-OSD-0', 'shots': 20000, 'failures': 103, 'seconds': 14.7}
+{'d': 7, 'p': 0.004, 'variant': 'BP-OSD-CS10', 'shots': 20000, 'failures': 89, 'seconds': 41.0}
+{'d': 7, 'p': 0.004, 'variant': 'AC kappa=0', 'shots': 20000, 'failures': 89, 'seconds': 5.4}
+{'d': 7, 'p': 0.004, 'variant': 'AC kappa=0.05', 'shots': 20000, 'failures': 75, 'seconds': 5.7}
+{'d': 7, 'p': 0.004, 'variant': 'AC kappa=0.2', 'shots': 20000, 'failures': 76, 'seconds': 6.8}
+d7_p0.004 gap computed on 415 shots
+{'d': 7, 'p': 0.006, 'variant': 'MWPM', 'shots': 20000, 'failures': 372, 'seconds': 0.1}
+{'d': 7, 'p': 0.006, 'variant': 'MWPM exact', 'shots': 20000, 'failures': 369, 'seconds': 0.1}
+{'d': 7, 'p': 0.006, 'variant': 'BP-OSD-0', 'shots': 20000, 'failures': 421, 'seconds': 19.9}
+{'d': 7, 'p': 0.006, 'variant': 'BP-OSD-CS10', 'shots': 20000, 'failures': 370, 'seconds': 56.3}
+{'d': 7, 'p': 0.006, 'variant': 'AC kappa=0', 'shots': 20000, 'failures': 379, 'seconds': 6.9}
+{'d': 7, 'p': 0.006, 'variant': 'AC kappa=0.05', 'shots': 20000, 'failures': 353, 'seconds': 8.1}
+{'d': 7, 'p': 0.006, 'variant': 'AC kappa=0.2', 'shots': 20000, 'failures': 353, 'seconds': 10.6}
+d7_p0.006 gap computed on 472 shots
+{'d': 9, 'p': 0.004, 'variant': 'MWPM', 'shots': 20000, 'failures': 51, 'seconds': 0.2}
+{'d': 9, 'p': 0.004, 'variant': 'MWPM exact', 'shots': 20000, 'failures': 47, 'seconds': 0.2}
+{'d': 9, 'p': 0.004, 'variant': 'BP-OSD-0', 'shots': 20000, 'failures': 66, 'seconds': 46.9}
+{'d': 9, 'p': 0.004, 'variant': 'BP-OSD-CS10', 'shots': 20000, 'failures': 50, 'seconds': 217.2}
+{'d': 9, 'p': 0.004, 'variant': 'AC kappa=0', 'shots': 20000, 'failures': 56, 'seconds': 16.2}
+{'d': 9, 'p': 0.004, 'variant': 'AC kappa=0.05', 'shots': 20000, 'failures': 45, 'seconds': 17.2}
+{'d': 9, 'p': 0.004, 'variant': 'AC kappa=0.2', 'shots': 20000, 'failures': 45, 'seconds': 23.0}
+d9_p0.004 gap computed on 414 shots
+{'d': 9, 'p': 0.006, 'variant': 'MWPM', 'shots': 20000, 'failures': 296, 'seconds': 0.3}
+{'d': 9, 'p': 0.006, 'variant': 'MWPM exact', 'shots': 20000, 'failures': 289, 'seconds': 0.3}
+{'d': 9, 'p': 0.006, 'variant': 'BP-OSD-0', 'shots': 20000, 'failures': 381, 'seconds': 51.3}
+{'d': 9, 'p': 0.006, 'variant': 'BP-OSD-CS10', 'shots': 20000, 'failures': 303, 'seconds': 266.9}
+{'d': 9, 'p': 0.006, 'variant': 'AC kappa=0', 'shots': 20000, 'failures': 320, 'seconds': 20.7}
+{'d': 9, 'p': 0.006, 'variant': 'AC kappa=0.05', 'shots': 20000, 'failures': 278, 'seconds': 22.1}
+{'d': 9, 'p': 0.006, 'variant': 'AC kappa=0.2', 'shots': 20000, 'failures': 281, 'seconds': 34.9}
+d9_p0.006 gap computed on 496 shots
+wrote /home/claude/gross_check/presentable_v2/surface_code_decoders/results_ac_investigation.csv
