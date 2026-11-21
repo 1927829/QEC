@@ -32,6 +32,12 @@ edges_2 = [(0,1),(0,4),(0,8),(1,11),(2,6),(3,11),(5,9),(7,10)]
 
 edges = sorted(edges_1+edges_2)
 
+column_1 = [(0,1),(1,2),(2,3),(3,4),(4,5),(2,6),(6,7),(0,8),(5,9),(7,10),(1,11)]
+
+column_2 = [(0,4),(0,1),(1,2),(2,3),(3,4),(5,6),(6,7),(7,8),(8,9),(9,10),(10,11),(3,11)]
+
+column_3 = [(0,8),(1,11),(2,6),(3,11),(4,5),(5,9),(5,6),(7,10),(7,8),(8,9),(9,10),(10,11)]
+
 reverse_dictionary = {} #edge to what qubit
 edge_adjacency_matrix =  [[] for _ in range(d)] #index i with qubit data_qubits[i] has what edges
 
@@ -73,16 +79,20 @@ qubit_Z_checks = [check.copy() for check in matrix_checks.sparse_Z_checks]
 
 #adjust
 
+adjusted_Z_checks = []
+
 for i in range(0,len(qubit_Z_checks)):
     check = qubit_Z_checks[i]
     involved=[]
     for qubits in check:
         if qubits in data_qubits_u:
             involved.append(data_qubits_u.index(qubits))
-    if len(involved)>2:
+    if len(involved)%2==1 or len(involved)>2:
         print(i,involved)
         raise AssertionError("Idk more overlap")
     if len(involved)==0:
         continue
     else:
+        #print(involved) #should be no duplicates
         check.append(reverse_dictionary[(involved[0],involved[1])])
+        adjusted_Z_checks.append([i,reverse_dictionary[(involved[0],involved[1])]])
