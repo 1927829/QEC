@@ -1,0 +1,9 @@
+# local caches and environments
+cache/
+relay/
+.venv/
+__pycache__/
+.ipynb_checkpoints/
+.pytest_cache/
+client.log
+*.egg-info/

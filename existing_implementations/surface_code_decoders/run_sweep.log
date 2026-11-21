@@ -1,0 +1,168 @@
+{'d': 3, 'p': 0.002, 'decoder': 'MWPM (PyMatching)', 'shots': 20000, 'failures': 80, 'seconds': 0.0, 'bp_not_converged': '', 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.002, 'decoder': 'Union-Find', 'shots': 20000, 'failures': 80, 'seconds': 0.02, 'bp_not_converged': '', 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.002, 'decoder': 'BP only', 'shots': 20000, 'failures': 310, 'seconds': 0.23, 'bp_not_converged': 1174, 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.002, 'decoder': 'BP-OSD', 'shots': 20000, 'failures': 80, 'seconds': 0.32, 'bp_not_converged': 1174, 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.002, 'decoder': 'BP-LSD', 'shots': 20000, 'failures': 76, 'seconds': 0.37, 'bp_not_converged': 1174, 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.002, 'decoder': 'Relay-BP', 'shots': 20000, 'failures': 81, 'seconds': 0.33, 'bp_not_converged': '', 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.002, 'decoder': 'Ambiguity Clustering', 'shots': 20000, 'failures': 79, 'seconds': 0.04, 'bp_not_converged': '', 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.003, 'decoder': 'MWPM (PyMatching)', 'shots': 20000, 'failures': 171, 'seconds': 0.0, 'bp_not_converged': '', 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.003, 'decoder': 'Union-Find', 'shots': 20000, 'failures': 167, 'seconds': 0.01, 'bp_not_converged': '', 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.003, 'decoder': 'BP only', 'shots': 20000, 'failures': 536, 'seconds': 0.31, 'bp_not_converged': 1780, 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.003, 'decoder': 'BP-OSD', 'shots': 20000, 'failures': 167, 'seconds': 0.4, 'bp_not_converged': 1780, 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.003, 'decoder': 'BP-LSD', 'shots': 20000, 'failures': 171, 'seconds': 0.4, 'bp_not_converged': 1780, 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.003, 'decoder': 'Relay-BP', 'shots': 20000, 'failures': 177, 'seconds': 0.32, 'bp_not_converged': '', 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.003, 'decoder': 'Ambiguity Clustering', 'shots': 20000, 'failures': 172, 'seconds': 0.08, 'bp_not_converged': '', 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.004, 'decoder': 'MWPM (PyMatching)', 'shots': 20000, 'failures': 259, 'seconds': 0.0, 'bp_not_converged': '', 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.004, 'decoder': 'Union-Find', 'shots': 20000, 'failures': 265, 'seconds': 0.01, 'bp_not_converged': '', 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.004, 'decoder': 'BP only', 'shots': 20000, 'failures': 691, 'seconds': 0.23, 'bp_not_converged': 2638, 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.004, 'decoder': 'BP-OSD', 'shots': 20000, 'failures': 256, 'seconds': 0.36, 'bp_not_converged': 2638, 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.004, 'decoder': 'BP-LSD', 'shots': 20000, 'failures': 266, 'seconds': 0.39, 'bp_not_converged': 2638, 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.004, 'decoder': 'Relay-BP', 'shots': 20000, 'failures': 268, 'seconds': 0.33, 'bp_not_converged': '', 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.004, 'decoder': 'Ambiguity Clustering', 'shots': 20000, 'failures': 254, 'seconds': 0.1, 'bp_not_converged': '', 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.005, 'decoder': 'MWPM (PyMatching)', 'shots': 20000, 'failures': 396, 'seconds': 0.01, 'bp_not_converged': '', 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.005, 'decoder': 'Union-Find', 'shots': 20000, 'failures': 404, 'seconds': 0.02, 'bp_not_converged': '', 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.005, 'decoder': 'BP only', 'shots': 20000, 'failures': 1026, 'seconds': 0.47, 'bp_not_converged': 3571, 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.005, 'decoder': 'BP-OSD', 'shots': 20000, 'failures': 394, 'seconds': 0.41, 'bp_not_converged': 3571, 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.005, 'decoder': 'BP-LSD', 'shots': 20000, 'failures': 412, 'seconds': 0.36, 'bp_not_converged': 3571, 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.005, 'decoder': 'Relay-BP', 'shots': 20000, 'failures': 402, 'seconds': 0.27, 'bp_not_converged': '', 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.005, 'decoder': 'Ambiguity Clustering', 'shots': 20000, 'failures': 398, 'seconds': 0.11, 'bp_not_converged': '', 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.006, 'decoder': 'MWPM (PyMatching)', 'shots': 20000, 'failures': 557, 'seconds': 0.0, 'bp_not_converged': '', 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.006, 'decoder': 'Union-Find', 'shots': 20000, 'failures': 555, 'seconds': 0.02, 'bp_not_converged': '', 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.006, 'decoder': 'BP only', 'shots': 20000, 'failures': 1239, 'seconds': 0.51, 'bp_not_converged': 4163, 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.006, 'decoder': 'BP-OSD', 'shots': 20000, 'failures': 540, 'seconds': 0.58, 'bp_not_converged': 4163, 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.006, 'decoder': 'BP-LSD', 'shots': 20000, 'failures': 577, 'seconds': 0.39, 'bp_not_converged': 4163, 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.006, 'decoder': 'Relay-BP', 'shots': 20000, 'failures': 549, 'seconds': 0.35, 'bp_not_converged': '', 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.006, 'decoder': 'Ambiguity Clustering', 'shots': 20000, 'failures': 544, 'seconds': 0.12, 'bp_not_converged': '', 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.008, 'decoder': 'MWPM (PyMatching)', 'shots': 20000, 'failures': 945, 'seconds': 0.01, 'bp_not_converged': '', 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.008, 'decoder': 'Union-Find', 'shots': 20000, 'failures': 953, 'seconds': 0.02, 'bp_not_converged': '', 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.008, 'decoder': 'BP only', 'shots': 20000, 'failures': 1825, 'seconds': 0.37, 'bp_not_converged': 5747, 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.008, 'decoder': 'BP-OSD', 'shots': 20000, 'failures': 930, 'seconds': 0.7, 'bp_not_converged': 5747, 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.008, 'decoder': 'BP-LSD', 'shots': 20000, 'failures': 954, 'seconds': 0.61, 'bp_not_converged': 5747, 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.008, 'decoder': 'Relay-BP', 'shots': 20000, 'failures': 956, 'seconds': 0.32, 'bp_not_converged': '', 'detectors': 16, 'faults': 73}
+{'d': 3, 'p': 0.008, 'decoder': 'Ambiguity Clustering', 'shots': 20000, 'failures': 922, 'seconds': 0.13, 'bp_not_converged': '', 'detectors': 16, 'faults': 73}
+{'d': 5, 'p': 0.002, 'decoder': 'MWPM (PyMatching)', 'shots': 20000, 'failures': 28, 'seconds': 0.01, 'bp_not_converged': '', 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.002, 'decoder': 'Union-Find', 'shots': 20000, 'failures': 32, 'seconds': 0.03, 'bp_not_converged': '', 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.002, 'decoder': 'BP only', 'shots': 20000, 'failures': 464, 'seconds': 1.53, 'bp_not_converged': 2081, 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.002, 'decoder': 'BP-OSD', 'shots': 20000, 'failures': 28, 'seconds': 2.05, 'bp_not_converged': 2081, 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.002, 'decoder': 'BP-LSD', 'shots': 20000, 'failures': 40, 'seconds': 1.28, 'bp_not_converged': 2081, 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.002, 'decoder': 'Relay-BP', 'shots': 20000, 'failures': 27, 'seconds': 2.13, 'bp_not_converged': '', 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.002, 'decoder': 'Ambiguity Clustering', 'shots': 20000, 'failures': 27, 'seconds': 0.61, 'bp_not_converged': '', 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.003, 'decoder': 'MWPM (PyMatching)', 'shots': 20000, 'failures': 63, 'seconds': 0.02, 'bp_not_converged': '', 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.003, 'decoder': 'Union-Find', 'shots': 20000, 'failures': 69, 'seconds': 0.07, 'bp_not_converged': '', 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.003, 'decoder': 'BP only', 'shots': 20000, 'failures': 885, 'seconds': 1.87, 'bp_not_converged': 3864, 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.003, 'decoder': 'BP-OSD', 'shots': 20000, 'failures': 64, 'seconds': 2.64, 'bp_not_converged': 3864, 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.003, 'decoder': 'BP-LSD', 'shots': 20000, 'failures': 89, 'seconds': 2.09, 'bp_not_converged': 3864, 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.003, 'decoder': 'Relay-BP', 'shots': 20000, 'failures': 71, 'seconds': 3.49, 'bp_not_converged': '', 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.003, 'decoder': 'Ambiguity Clustering', 'shots': 20000, 'failures': 61, 'seconds': 1.12, 'bp_not_converged': '', 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.004, 'decoder': 'MWPM (PyMatching)', 'shots': 20000, 'failures': 161, 'seconds': 0.03, 'bp_not_converged': '', 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.004, 'decoder': 'Union-Find', 'shots': 20000, 'failures': 173, 'seconds': 0.09, 'bp_not_converged': '', 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.004, 'decoder': 'BP only', 'shots': 20000, 'failures': 1408, 'seconds': 2.46, 'bp_not_converged': 5785, 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.004, 'decoder': 'BP-OSD', 'shots': 20000, 'failures': 165, 'seconds': 4.22, 'bp_not_converged': 5785, 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.004, 'decoder': 'BP-LSD', 'shots': 20000, 'failures': 218, 'seconds': 3.52, 'bp_not_converged': 5785, 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.004, 'decoder': 'Relay-BP', 'shots': 20000, 'failures': 169, 'seconds': 4.06, 'bp_not_converged': '', 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.004, 'decoder': 'Ambiguity Clustering', 'shots': 20000, 'failures': 161, 'seconds': 1.16, 'bp_not_converged': '', 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.005, 'decoder': 'MWPM (PyMatching)', 'shots': 20000, 'failures': 284, 'seconds': 0.03, 'bp_not_converged': '', 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.005, 'decoder': 'Union-Find', 'shots': 20000, 'failures': 316, 'seconds': 0.1, 'bp_not_converged': '', 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.005, 'decoder': 'BP only', 'shots': 20000, 'failures': 1855, 'seconds': 3.14, 'bp_not_converged': 7491, 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.005, 'decoder': 'BP-OSD', 'shots': 20000, 'failures': 281, 'seconds': 5.32, 'bp_not_converged': 7491, 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.005, 'decoder': 'BP-LSD', 'shots': 20000, 'failures': 375, 'seconds': 3.13, 'bp_not_converged': 7491, 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.005, 'decoder': 'Relay-BP', 'shots': 20000, 'failures': 289, 'seconds': 5.19, 'bp_not_converged': '', 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.005, 'decoder': 'Ambiguity Clustering', 'shots': 20000, 'failures': 285, 'seconds': 1.3, 'bp_not_converged': '', 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.006, 'decoder': 'MWPM (PyMatching)', 'shots': 20000, 'failures': 514, 'seconds': 0.04, 'bp_not_converged': '', 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.006, 'decoder': 'Union-Find', 'shots': 20000, 'failures': 540, 'seconds': 0.13, 'bp_not_converged': '', 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.006, 'decoder': 'BP only', 'shots': 20000, 'failures': 2500, 'seconds': 3.34, 'bp_not_converged': 9389, 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.006, 'decoder': 'BP-OSD', 'shots': 20000, 'failures': 504, 'seconds': 7.79, 'bp_not_converged': 9389, 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.006, 'decoder': 'BP-LSD', 'shots': 20000, 'failures': 617, 'seconds': 3.49, 'bp_not_converged': 9389, 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.006, 'decoder': 'Relay-BP', 'shots': 20000, 'failures': 511, 'seconds': 6.14, 'bp_not_converged': '', 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.006, 'decoder': 'Ambiguity Clustering', 'shots': 20000, 'failures': 482, 'seconds': 1.47, 'bp_not_converged': '', 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.008, 'decoder': 'MWPM (PyMatching)', 'shots': 20000, 'failures': 1049, 'seconds': 0.06, 'bp_not_converged': '', 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.008, 'decoder': 'Union-Find', 'shots': 20000, 'failures': 1112, 'seconds': 0.17, 'bp_not_converged': '', 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.008, 'decoder': 'BP only', 'shots': 20000, 'failures': 3683, 'seconds': 4.12, 'bp_not_converged': 12706, 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.008, 'decoder': 'BP-OSD', 'shots': 20000, 'failures': 1023, 'seconds': 10.77, 'bp_not_converged': 12706, 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.008, 'decoder': 'BP-LSD', 'shots': 20000, 'failures': 1188, 'seconds': 4.53, 'bp_not_converged': 12706, 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.008, 'decoder': 'Relay-BP', 'shots': 20000, 'failures': 1042, 'seconds': 9.79, 'bp_not_converged': '', 'detectors': 72, 'faults': 351}
+{'d': 5, 'p': 0.008, 'decoder': 'Ambiguity Clustering', 'shots': 20000, 'failures': 983, 'seconds': 2.66, 'bp_not_converged': '', 'detectors': 72, 'faults': 351}
+{'d': 7, 'p': 0.002, 'decoder': 'MWPM (PyMatching)', 'shots': 20000, 'failures': 6, 'seconds': 0.03, 'bp_not_converged': '', 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.002, 'decoder': 'Union-Find', 'shots': 20000, 'failures': 5, 'seconds': 0.08, 'bp_not_converged': '', 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.002, 'decoder': 'BP only', 'shots': 20000, 'failures': 747, 'seconds': 6.53, 'bp_not_converged': 4076, 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.002, 'decoder': 'BP-OSD', 'shots': 20000, 'failures': 5, 'seconds': 22.21, 'bp_not_converged': 4076, 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.002, 'decoder': 'BP-LSD', 'shots': 20000, 'failures': 11, 'seconds': 8.71, 'bp_not_converged': 4076, 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.002, 'decoder': 'Relay-BP', 'shots': 20000, 'failures': 4, 'seconds': 15.48, 'bp_not_converged': '', 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.002, 'decoder': 'Ambiguity Clustering', 'shots': 20000, 'failures': 4, 'seconds': 3.99, 'bp_not_converged': '', 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.003, 'decoder': 'MWPM (PyMatching)', 'shots': 20000, 'failures': 39, 'seconds': 0.07, 'bp_not_converged': '', 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.003, 'decoder': 'Union-Find', 'shots': 20000, 'failures': 39, 'seconds': 0.21, 'bp_not_converged': '', 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.003, 'decoder': 'BP only', 'shots': 20000, 'failures': 1506, 'seconds': 14.12, 'bp_not_converged': 8153, 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.003, 'decoder': 'BP-OSD', 'shots': 20000, 'failures': 37, 'seconds': 43.85, 'bp_not_converged': 8153, 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.003, 'decoder': 'BP-LSD', 'shots': 20000, 'failures': 49, 'seconds': 16.2, 'bp_not_converged': 8153, 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.003, 'decoder': 'Relay-BP', 'shots': 20000, 'failures': 40, 'seconds': 19.79, 'bp_not_converged': '', 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.003, 'decoder': 'Ambiguity Clustering', 'shots': 20000, 'failures': 38, 'seconds': 4.1, 'bp_not_converged': '', 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.004, 'decoder': 'MWPM (PyMatching)', 'shots': 20000, 'failures': 86, 'seconds': 0.1, 'bp_not_converged': '', 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.004, 'decoder': 'Union-Find', 'shots': 20000, 'failures': 96, 'seconds': 0.17, 'bp_not_converged': '', 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.004, 'decoder': 'BP only', 'shots': 20000, 'failures': 2445, 'seconds': 11.98, 'bp_not_converged': 11112, 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.004, 'decoder': 'BP-OSD', 'shots': 20000, 'failures': 89, 'seconds': 45.36, 'bp_not_converged': 11112, 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.004, 'decoder': 'BP-LSD', 'shots': 20000, 'failures': 111, 'seconds': 18.78, 'bp_not_converged': 11112, 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.004, 'decoder': 'Relay-BP', 'shots': 20000, 'failures': 97, 'seconds': 39.4, 'bp_not_converged': '', 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.004, 'decoder': 'Ambiguity Clustering', 'shots': 20000, 'failures': 75, 'seconds': 7.23, 'bp_not_converged': '', 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.005, 'decoder': 'MWPM (PyMatching)', 'shots': 20000, 'failures': 202, 'seconds': 0.14, 'bp_not_converged': '', 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.005, 'decoder': 'Union-Find', 'shots': 20000, 'failures': 232, 'seconds': 0.43, 'bp_not_converged': '', 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.005, 'decoder': 'BP only', 'shots': 20000, 'failures': 3433, 'seconds': 20.96, 'bp_not_converged': 13758, 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.005, 'decoder': 'BP-OSD', 'shots': 20000, 'failures': 197, 'seconds': 47.64, 'bp_not_converged': 13758, 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.005, 'decoder': 'BP-LSD', 'shots': 20000, 'failures': 294, 'seconds': 14.68, 'bp_not_converged': 13758, 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.005, 'decoder': 'Relay-BP', 'shots': 20000, 'failures': 213, 'seconds': 35.9, 'bp_not_converged': '', 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.005, 'decoder': 'Ambiguity Clustering', 'shots': 20000, 'failures': 190, 'seconds': 5.48, 'bp_not_converged': '', 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.006, 'decoder': 'MWPM (PyMatching)', 'shots': 20000, 'failures': 372, 'seconds': 0.15, 'bp_not_converged': '', 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.006, 'decoder': 'Union-Find', 'shots': 20000, 'failures': 406, 'seconds': 0.28, 'bp_not_converged': '', 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.006, 'decoder': 'BP only', 'shots': 20000, 'failures': 4360, 'seconds': 14.25, 'bp_not_converged': 15766, 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.006, 'decoder': 'BP-OSD', 'shots': 20000, 'failures': 370, 'seconds': 49.1, 'bp_not_converged': 15766, 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.006, 'decoder': 'BP-LSD', 'shots': 20000, 'failures': 460, 'seconds': 16.74, 'bp_not_converged': 15766, 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.006, 'decoder': 'Relay-BP', 'shots': 20000, 'failures': 392, 'seconds': 47.94, 'bp_not_converged': '', 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.006, 'decoder': 'Ambiguity Clustering', 'shots': 20000, 'failures': 353, 'seconds': 6.58, 'bp_not_converged': '', 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.008, 'decoder': 'MWPM (PyMatching)', 'shots': 20000, 'failures': 960, 'seconds': 0.2, 'bp_not_converged': '', 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.008, 'decoder': 'Union-Find', 'shots': 20000, 'failures': 1045, 'seconds': 0.39, 'bp_not_converged': '', 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.008, 'decoder': 'BP only', 'shots': 20000, 'failures': 6085, 'seconds': 16.16, 'bp_not_converged': 18423, 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.008, 'decoder': 'BP-OSD', 'shots': 20000, 'failures': 945, 'seconds': 54.84, 'bp_not_converged': 18423, 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.008, 'decoder': 'BP-LSD', 'shots': 20000, 'failures': 1163, 'seconds': 21.79, 'bp_not_converged': 18423, 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.008, 'decoder': 'Relay-BP', 'shots': 20000, 'failures': 1008, 'seconds': 80.89, 'bp_not_converged': '', 'detectors': 192, 'faults': 981}
+{'d': 7, 'p': 0.008, 'decoder': 'Ambiguity Clustering', 'shots': 20000, 'failures': 908, 'seconds': 8.05, 'bp_not_converged': '', 'detectors': 192, 'faults': 981}
+{'d': 9, 'p': 0.002, 'decoder': 'MWPM (PyMatching)', 'shots': 20000, 'failures': 1, 'seconds': 0.07, 'bp_not_converged': '', 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.002, 'decoder': 'Union-Find', 'shots': 20000, 'failures': 1, 'seconds': 0.19, 'bp_not_converged': '', 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.002, 'decoder': 'BP only', 'shots': 20000, 'failures': 1284, 'seconds': 15.96, 'bp_not_converged': 6910, 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.002, 'decoder': 'BP-OSD', 'shots': 20000, 'failures': 2, 'seconds': 81.23, 'bp_not_converged': 6910, 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.002, 'decoder': 'BP-LSD', 'shots': 20000, 'failures': 3, 'seconds': 18.42, 'bp_not_converged': 6910, 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.002, 'decoder': 'Relay-BP', 'shots': 20000, 'failures': 4, 'seconds': 34.64, 'bp_not_converged': '', 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.002, 'decoder': 'Ambiguity Clustering', 'shots': 20000, 'failures': 2, 'seconds': 8.3, 'bp_not_converged': '', 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.003, 'decoder': 'MWPM (PyMatching)', 'shots': 20000, 'failures': 13, 'seconds': 0.11, 'bp_not_converged': '', 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.003, 'decoder': 'Union-Find', 'shots': 20000, 'failures': 12, 'seconds': 0.29, 'bp_not_converged': '', 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.003, 'decoder': 'BP only', 'shots': 20000, 'failures': 2495, 'seconds': 27.54, 'bp_not_converged': 12910, 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.003, 'decoder': 'BP-OSD', 'shots': 20000, 'failures': 14, 'seconds': 156.03, 'bp_not_converged': 12910, 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.003, 'decoder': 'BP-LSD', 'shots': 20000, 'failures': 18, 'seconds': 28.87, 'bp_not_converged': 12910, 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.003, 'decoder': 'Relay-BP', 'shots': 20000, 'failures': 10, 'seconds': 77.2, 'bp_not_converged': '', 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.003, 'decoder': 'Ambiguity Clustering', 'shots': 20000, 'failures': 10, 'seconds': 12.52, 'bp_not_converged': '', 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.004, 'decoder': 'MWPM (PyMatching)', 'shots': 20000, 'failures': 51, 'seconds': 0.23, 'bp_not_converged': '', 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.004, 'decoder': 'Union-Find', 'shots': 20000, 'failures': 58, 'seconds': 0.48, 'bp_not_converged': '', 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.004, 'decoder': 'BP only', 'shots': 20000, 'failures': 3858, 'seconds': 39.13, 'bp_not_converged': 15987, 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.004, 'decoder': 'BP-OSD', 'shots': 20000, 'failures': 50, 'seconds': 242.34, 'bp_not_converged': 15987, 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.004, 'decoder': 'BP-LSD', 'shots': 20000, 'failures': 65, 'seconds': 42.33, 'bp_not_converged': 15987, 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.004, 'decoder': 'Relay-BP', 'shots': 20000, 'failures': 59, 'seconds': 134.81, 'bp_not_converged': '', 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.004, 'decoder': 'Ambiguity Clustering', 'shots': 20000, 'failures': 45, 'seconds': 17.79, 'bp_not_converged': '', 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.005, 'decoder': 'MWPM (PyMatching)', 'shots': 20000, 'failures': 147, 'seconds': 0.28, 'bp_not_converged': '', 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.005, 'decoder': 'Union-Find', 'shots': 20000, 'failures': 170, 'seconds': 0.73, 'bp_not_converged': '', 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.005, 'decoder': 'BP only', 'shots': 20000, 'failures': 5092, 'seconds': 43.01, 'bp_not_converged': 17992, 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.005, 'decoder': 'BP-OSD', 'shots': 20000, 'failures': 150, 'seconds': 262.49, 'bp_not_converged': 17992, 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.005, 'decoder': 'BP-LSD', 'shots': 20000, 'failures': 232, 'seconds': 51.28, 'bp_not_converged': 17992, 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.005, 'decoder': 'Relay-BP', 'shots': 20000, 'failures': 168, 'seconds': 224.74, 'bp_not_converged': '', 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.005, 'decoder': 'Ambiguity Clustering', 'shots': 20000, 'failures': 143, 'seconds': 20.5, 'bp_not_converged': '', 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.006, 'decoder': 'MWPM (PyMatching)', 'shots': 20000, 'failures': 296, 'seconds': 0.38, 'bp_not_converged': '', 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.006, 'decoder': 'Union-Find', 'shots': 20000, 'failures': 342, 'seconds': 0.71, 'bp_not_converged': '', 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.006, 'decoder': 'BP only', 'shots': 20000, 'failures': 6141, 'seconds': 48.42, 'bp_not_converged': 19116, 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.006, 'decoder': 'BP-OSD', 'shots': 20000, 'failures': 303, 'seconds': 271.04, 'bp_not_converged': 19116, 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.006, 'decoder': 'BP-LSD', 'shots': 20000, 'failures': 410, 'seconds': 51.79, 'bp_not_converged': 19116, 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.006, 'decoder': 'Relay-BP', 'shots': 20000, 'failures': 365, 'seconds': 323.23, 'bp_not_converged': '', 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.006, 'decoder': 'Ambiguity Clustering', 'shots': 20000, 'failures': 278, 'seconds': 22.57, 'bp_not_converged': '', 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.008, 'decoder': 'MWPM (PyMatching)', 'shots': 20000, 'failures': 972, 'seconds': 0.52, 'bp_not_converged': '', 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.008, 'decoder': 'Union-Find', 'shots': 20000, 'failures': 1087, 'seconds': 1.04, 'bp_not_converged': '', 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.008, 'decoder': 'BP only', 'shots': 20000, 'failures': 7777, 'seconds': 50.65, 'bp_not_converged': 19868, 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.008, 'decoder': 'BP-OSD', 'shots': 20000, 'failures': 1021, 'seconds': 296.3, 'bp_not_converged': 19868, 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.008, 'decoder': 'BP-LSD', 'shots': 20000, 'failures': 1206, 'seconds': 62.34, 'bp_not_converged': 19868, 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.008, 'decoder': 'Relay-BP', 'shots': 20000, 'failures': 1101, 'seconds': 576.84, 'bp_not_converged': '', 'detectors': 400, 'faults': 2107}
+{'d': 9, 'p': 0.008, 'decoder': 'Ambiguity Clustering', 'shots': 20000, 'failures': 955, 'seconds': 24.15, 'bp_not_converged': '', 'detectors': 400, 'faults': 2107}
