@@ -41,6 +41,20 @@ Z_checks = np.hstack((np.transpose(B_poly),np.transpose(A_poly)))
 X_checks = np.asarray(X_checks,dtype=np.uint8)
 Z_checks = np.asarray(Z_checks,dtype=np.uint8)
 
+sparse_X_checks = []
+for i in range(0,len(X_checks)):
+    checks = X_checks[i]
+    sparse_X_checks.append([])
+    for j in range(0,n):
+        if checks[j]==1:
+            sparse_X_checks[i].append(j)
+sparse_Z_checks = []
+for i in range(0,len(Z_checks)):
+    checks = Z_checks[i]
+    sparse_Z_checks.append([])
+    for j in range(0,n):
+        if checks[j]==1:
+            sparse_Z_checks[i].append(j)
 
 def get_qubit_a(start: int, poly: tuple, transpose=False):
     a, b = poly
@@ -52,3 +66,9 @@ def get_qubit_a(start: int, poly: tuple, transpose=False):
     return x * order_y + y
 def get_qubit_b(start: int, poly: tuple, transpose=False):
     return (n//2) + get_qubit_a(start, poly, transpose)
+def get_qubit_tuple(coord: tuple):
+    #(a,b,c) -> c=0 L, c=1, R, x^ay^b
+    if coord[2]==0:
+        return get_qubit_a(0,(coord[0],coord[1]))
+    else:
+        return get_qubit_b(0,(coord[0],coord[1]))
